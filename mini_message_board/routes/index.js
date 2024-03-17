@@ -12,26 +12,29 @@ const messages = [
   },
 ];
 
-const testing = "Testing_IT_Out";
-const test = ['carbon', 'nitrogen', 'helium','hydrogen']
-const number = 69
 
 var express = require('express');
 var router = express.Router();
 
-const person = {
-  name: "John Doe",
-  age: 30
-};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'Hey', test: test[1], info: messages})
+  
+  res.render('index', {info: messages})
   
 });
 
 router.get('/new', function(req,res,next) {
   res.render('form')
+})
+
+router.post('/new', function(req,res,next) {
+  
+  const message = req.body.message;
+  const author = req.body.author;
+  messages.push({text: message, user: author });
+  
+  res.redirect('/');
 })
 
 module.exports = router;

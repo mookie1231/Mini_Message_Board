@@ -1,9 +1,52 @@
-extends layout
-block content
+
+html
+  head
+    title Mini Message Board
+    style.
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+      }
+      h1 {
+        color: #007BFF;
+      }
+      .message {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+      }
+      .message:last-child {
+        border: none;
+      }
+      .user {
+        font-weight: bold;
+      }
+      .text {
+        margin-top: 5px;
+      }
+  body
 
   h1 Mini Message Board
-  each n in [0,1] 
-    p #{info[n].user}: #{info[n].text}
+
+  each object in info 
+    p #{object.user}: #{object.text}
+  
+  a(href="http://localhost:3000/new") Add  Here
+
+
+    
+    
 
  
   
