@@ -1,5 +1,9 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+
+  h1 Mini Message Board
+  each n in [0,1] 
+    p #{info[n].user}: #{info[n].text}
+
+ 
+  
