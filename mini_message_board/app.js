@@ -38,4 +38,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 // has a lot of important functions 
+// more changes to be made
 module.exports = app;
