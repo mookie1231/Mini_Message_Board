@@ -37,5 +37,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+// has a lot of important functions 
 module.exports = app;
